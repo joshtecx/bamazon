@@ -53,7 +53,7 @@ function customerPrompt(){
             message: "Please input the quantity that you would like to purchase:  "
         }
     ]).then(function(answer){
-        console.log(answer);
+        // console.log(answer);
         connection.query("SELECT * FROM products", function(error, response){
             if(error){
                 throw error;
@@ -62,12 +62,16 @@ function customerPrompt(){
             // answer.id = reponse.item_id;
             answer.id = response[(answer.id - 1 )].item_id;
             for(let i = 0; i < response.length; i++){
+                var updatedAmount = response[i].stock_quantity - answer.quantity;
+
                 if(answer.id === response[i].item_id){
-                    console.log("this part works")
+                    // console.log("this part works")
                     if(answer.quantity <= response[i].stock_quantity){
-                        console.log("cool this part works too")
+                        // console.log("cool this part works too")
+                        order(answer.id, updatedAmount);
+                        total(answer.quantity, response[i].price);
                     }else{
-                        console.log("Insufficient amount!!!")
+                        console.log("Insufficient amount of that item!!!")
                     }
                 }
 
@@ -80,10 +84,28 @@ function customerPrompt(){
     // connection.end();
 }
 
-function order(){
-
+function order(id, quantity){
+    connection.query("UPDATE products SET ? WHERE ?",
+        [
+            {
+               item_id: id
+            },
+            {
+                stock_quantity: quantity
+            }
+        ],
+        function(error, response){
+            if(error){
+                throw error;
+            }
+            // console.log(response);
+            console.log("Thank you for your purchase!");
+        }
+    );
+    connection.end();
 }
 
-function total(){
-
+function total(quantity, price){
+    var totalCost = quantity * price;
+    console.log("Your total will be: " + totalCost);
 }
