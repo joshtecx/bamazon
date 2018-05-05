@@ -36,5 +36,6 @@ The app should then prompt users with two messages.
 
 ### Customer View Screenshots
 
-
+#### Successful Purchase
+<img width="496" alt="screen shot 2018-05-05 at 9 39 45 am" src="https://user-images.githubusercontent.com/32961912/39663862-7f1b01aa-5048-11e8-8061-bd64df1457c5.png">
 
