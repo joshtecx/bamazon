@@ -47,4 +47,30 @@ The app should then prompt users with two messages.
 <img width="490" alt="screen shot 2018-05-05 at 9 44 26 am" src="https://user-images.githubusercontent.com/32961912/39663900-1ecd2214-5049-11e8-9574-48655df9c308.png">
 
 
+## Manager View
 
+Challenge #2: Manager View (Next Level)
+
+1. Create a new Node application called bamazonManager.js. Running this application will:
+
+    1. List a set of menu options:
+        View Products for Sale
+        View Low Inventory
+        Add to Inventory
+        Add New Product
+        
+    2.If a manager selects View Products for Sale, the app should list every available item: the item IDs, names, prices, and       quantities.
+    
+    3. If a manager selects View Low Inventory, then it should list all items with an inventory count lower than five.
+    
+    4. If a manager selects Add to Inventory, your app should display a prompt that will let the manager "add more" of any          item currently in the store. (NOTE: THIS FUNCTION IS STILL GIVING ME ISSUES)
+    
+    5. If a manager selects Add New Product, it should allow the manager to add a completely new product to the store.
+    
+### Manager View Screenshots
+
+#### View Products For Sale
+
+#### View Low Inventory
+
+#### Add New Product
